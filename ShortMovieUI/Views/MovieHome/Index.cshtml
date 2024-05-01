@@ -31,10 +31,11 @@
 				<div class="tabs">
 					<ul class="tab-links">
 						<li class="active"><a href="#tab1">#Öneriler</a></li>
-						<li><a href="#tab2"> #Ödüllüler</a></li>
-						<li><a href="#tab3">  #Beğenilenler</a></li>
-						<li><a href="#tab4"> #Rastgele</a></li>
+						<li><a href="#tab2">    #Ödüllüler</a></li>
+						<li><a href="#tab3">    #Beğenilenler</a></li>
+						<li><a href="#tab4">    #Rastgele</a></li>
 					</ul>
+					<br />
 					<div class="tab-content">
 						
 						@await Component.InvokeAsync("_MovieHomeAdvice")
@@ -56,6 +57,7 @@
 						<li><a href="#tab23"> # EnYeni</a></li>
 						<li><a href="#tab24"> #EnEski</a></li>
 					</ul>
+					<br />
 					<div class="tab-content">
 						@await Component.InvokeAsync("_MovieHomeShort")	
 						@await Component.InvokeAsync("_MovieHomeLong")

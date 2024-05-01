@@ -27,7 +27,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderByDescending(x=>x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
+				return c.Movies.OrderByDescending(x=>x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
@@ -43,7 +43,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderBy(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
+				return c.Movies.OrderBy(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderBy(x => x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
+				return c.Movies.OrderBy(x => x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var context = new Context())
 			{
-				return context.Movies.Where(x=>x.MoviePrize==true).Include(x=>x.Category).Include(x=>x.Director).Take(10).ToList();
+				return context.Movies.Where(x=>x.MoviePrize==true).Include(x=>x.Category).Include(x=>x.Director).Take(5).ToList();
 			}
 		}
 		public List<Movie> GetMoviesRandom()
@@ -90,7 +90,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderByDescending(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
+				return c.Movies.OrderByDescending(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
