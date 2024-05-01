@@ -18,6 +18,8 @@ namespace EntityLayer.Concrete
         public string MovieTime { get; set; }
         public DateTime MovieDate { get; set; }
         public string MovieImage { get; set; }
+        public  bool MoviePrize { get; set; }
+
         public int CategoryID { get; set; }
         public Category Category { get; set; }
         public int DirectorID { get; set; }

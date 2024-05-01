@@ -38,7 +38,32 @@ namespace BusinessLayer.Concrete
             return _movieDal.GetList();
         }
 
-        public void TUpdate(Movie t)
+		public List<Movie> TGetMoviesAdvices()
+		{
+			return _movieDal.GetMoviesAdvices();
+		}
+
+		public List<Movie> TGetMoviesLikes()
+		{
+			return _movieDal.GetMoviesLikes();
+		}
+
+		public List<Movie> TGetMoviesPrizes()
+		{
+			return _movieDal.GetMoviesPrizes(); 
+		}
+
+		public List<Movie> TGetMoviesRandom()
+		{
+			return _movieDal.GetMoviesRandom();
+		}
+
+		public List<Movie> TMovieWithCategoryAndDirector()
+		{
+            return _movieDal.GetMoviesWithCategoryandDirector();
+		}
+
+		public void TUpdate(Movie t)
         {
             _movieDal.Update(t);
         }

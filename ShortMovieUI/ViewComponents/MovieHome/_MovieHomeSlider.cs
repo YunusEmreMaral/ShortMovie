@@ -10,7 +10,7 @@ namespace ShortMovieUI.ViewComponents.MovieHome
 		MovieManager mm = new MovieManager(new EfMovieRepository());
 		public IViewComponentResult Invoke()
 		{
-			var movies=mm.TGetList();
+			var movies=mm.TMovieWithCategoryAndDirector();
 			return View(movies);
 		}
 	}
