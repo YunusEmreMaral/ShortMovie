@@ -14,5 +14,9 @@ namespace BusinessLayer.Abstract
 		List<Movie> TGetMoviesPrizes();
 		List<Movie> TGetMoviesLikes();
 		List<Movie> TGetMoviesRandom();
+		List<Movie> TGetMoviesLast();
+		List<Movie> TGetMoviesNew();
+		List<Movie> TGetMoviesShort();
+		List<Movie> TGetMoviesLong();
 	}
 }

@@ -14,5 +14,9 @@ namespace DataAccessLayer.Abstract
         List<Movie> GetMoviesPrizes();
         List<Movie> GetMoviesLikes();
         List<Movie> GetMoviesRandom();
+        List<Movie> GetMoviesLast();
+        List<Movie> GetMoviesNew();
+        List<Movie> GetMoviesShort();
+        List<Movie> GetMoviesLong();
     }
 }

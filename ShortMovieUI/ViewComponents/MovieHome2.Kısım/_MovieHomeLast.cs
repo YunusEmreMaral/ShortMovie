@@ -2,15 +2,16 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ShortMovieUI.ViewComponents.MovieHome
+namespace ShortMovieUI.ViewComponents.MovieHome2.Kısım
 {
-	public class _MovieHomeRandom : ViewComponent
+	public class _MovieHomeLast : ViewComponent
 	{
 		public IViewComponentResult Invoke()
 		{
 			MovieManager mm = new MovieManager(new EfMovieRepository());
-			var random = mm.TGetMoviesRandom();
-			return View(random);
+			var movies = mm.TGetMoviesLast();
+			return View(movies);
 		}
+
 	}
 }

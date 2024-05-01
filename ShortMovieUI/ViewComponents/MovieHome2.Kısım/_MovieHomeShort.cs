@@ -2,15 +2,16 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ShortMovieUI.ViewComponents.MovieHome
+namespace ShortMovieUI.ViewComponents.MovieHome2.Kısım
 {
-	public class _MovieHomeAdvice : ViewComponent
+	public class _MovieHomeShort : ViewComponent
 	{
 		public IViewComponentResult Invoke()
 		{
 			MovieManager mm = new MovieManager(new EfMovieRepository());
-			var advices = mm.TGetMoviesAdvices();
-			return View(advices);
+			var movies = mm.TGetMoviesShort();
+			return View(movies);
 		}
+
 	}
 }

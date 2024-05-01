@@ -43,9 +43,24 @@ namespace BusinessLayer.Concrete
 			return _movieDal.GetMoviesAdvices();
 		}
 
+		public List<Movie> TGetMoviesLast()
+		{
+			return _movieDal.GetMoviesLast();
+		}
+
 		public List<Movie> TGetMoviesLikes()
 		{
 			return _movieDal.GetMoviesLikes();
+		}
+
+		public List<Movie> TGetMoviesLong()
+		{
+			return _movieDal.GetMoviesLong();
+		}
+
+		public List<Movie> TGetMoviesNew()
+		{
+			return _movieDal.GetMoviesNew();
 		}
 
 		public List<Movie> TGetMoviesPrizes()
@@ -56,6 +71,11 @@ namespace BusinessLayer.Concrete
 		public List<Movie> TGetMoviesRandom()
 		{
 			return _movieDal.GetMoviesRandom();
+		}
+
+		public List<Movie> TGetMoviesShort()
+		{
+			return _movieDal.GetMoviesShort();
 		}
 
 		public List<Movie> TMovieWithCategoryAndDirector()

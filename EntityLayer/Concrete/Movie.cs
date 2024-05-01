@@ -15,10 +15,12 @@ namespace EntityLayer.Concrete
         public string MovieLink { get; set; }
         
         public string MovieDescription { get; set; }
-        public string MovieTime { get; set; }
+        public int MovieTime { get; set; }
         public DateTime MovieDate { get; set; }
         public string MovieImage { get; set; }
         public  bool MoviePrize { get; set; }
+        public  bool MovieAdvice { get; set; }
+        public  int MovieLike { get; set; }
 
         public int CategoryID { get; set; }
         public Category Category { get; set; }

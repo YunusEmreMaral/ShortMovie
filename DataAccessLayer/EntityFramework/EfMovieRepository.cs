@@ -23,11 +23,35 @@ namespace DataAccessLayer.EntityFramework
 			}
 		}
 
+		public List<Movie> GetMoviesLast()
+		{
+			using (var c = new Context())
+			{
+				return c.Movies.OrderByDescending(x=>x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
+			}
+		}
+
 		public List<Movie> GetMoviesLikes()
 		{
 			using (var c = new Context())
 			{
 				return c.Movies.Include(x => x.Category).Include(x => x.Director).ToList();
+			}
+		}
+
+		public List<Movie> GetMoviesLong()
+		{
+			using (var c = new Context())
+			{
+				return c.Movies.OrderBy(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
+			}
+		}
+
+		public List<Movie> GetMoviesNew()
+		{
+			using (var c = new Context())
+			{
+				return c.Movies.OrderBy(x => x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
 			}
 		}
 
@@ -59,6 +83,14 @@ namespace DataAccessLayer.EntityFramework
 
 
 
+			}
+		}
+
+		public List<Movie> GetMoviesShort()
+		{
+			using (var c = new Context())
+			{
+				return c.Movies.OrderByDescending(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(10).ToList();
 			}
 		}
 
