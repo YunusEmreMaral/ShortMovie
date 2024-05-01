@@ -12,6 +12,8 @@ namespace EntityLayer.Concrete
         [Key]
         public int MovieID { get; set; }
         public string MovieName { get; set; }
+        public string MovieLink { get; set; }
+        
         public string MovieDescription { get; set; }
         public string MovieTime { get; set; }
         public DateTime MovieDate { get; set; }
