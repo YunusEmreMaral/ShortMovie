@@ -4,9 +4,14 @@
 	@foreach(var item in Model)
 	{
 		<div class="movie-item ">
-			<div class="mv-img">
-				<a href="#"><img src="@item.MovieImage" alt="" width="285" height="437"></a>
-			</div>
+			<a href="#">
+				<div class="mv-img">
+			
+					<div style="padding:5px; width:285px; height:437px;">
+					<img src="@item.MovieImage" style="width:100%; height:100%; object-fit:cover;" alt="">
+				</div>
+			
+			</div>	</a>
 			<div class="title-in">
 				<div class="cate">
 					<span class="blue"><a href="#">Sci-fi</a></span>

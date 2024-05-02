@@ -7,10 +7,15 @@ namespace ShortMovieUI.ViewComponents.MovieHome
 {
 	public class _MovieHomeSlider : ViewComponent
 	{
-		MovieManager mm = new MovieManager(new EfMovieRepository());
+		private readonly IMovieService _movieService;
+
+		public _MovieHomeSlider(IMovieService movieService)
+		{
+			_movieService = movieService;
+		}
 		public IViewComponentResult Invoke()
 		{
-			var movies=mm.TMovieWithCategoryAndDirector();
+			var movies= _movieService.TMovieWithCategoryAndDirector();
 			return View(movies);
 		}
 	}

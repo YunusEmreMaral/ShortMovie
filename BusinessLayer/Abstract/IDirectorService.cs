@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IDirectorService:IGenericService<Director>
     {
-    }
+		List<Director> TGet10Director();
+	}
 }

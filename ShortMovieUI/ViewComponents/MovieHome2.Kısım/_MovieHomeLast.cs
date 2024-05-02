@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,10 +7,15 @@ namespace ShortMovieUI.ViewComponents.MovieHome2.Kısım
 {
 	public class _MovieHomeLast : ViewComponent
 	{
+		private readonly IMovieService _movieService;
+
+		public _MovieHomeLast(IMovieService movieService)
+		{
+			_movieService = movieService;
+		}
 		public IViewComponentResult Invoke()
 		{
-			MovieManager mm = new MovieManager(new EfMovieRepository());
-			var movies = mm.TGetMoviesLast();
+			var movies = _movieService.TGetMoviesLast();
 			return View(movies);
 		}
 

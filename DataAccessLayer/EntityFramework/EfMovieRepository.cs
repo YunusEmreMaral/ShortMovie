@@ -19,7 +19,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.Include(x => x.Category).Include(x => x.Director).ToList();
+				return c.Movies.Where(x=>x.MovieAdvice==true).Include(x => x.Category).Include(x => x.Director).ToList();
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderByDescending(x=>x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
+				return c.Movies.OrderBy(x=>x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.Include(x => x.Category).Include(x => x.Director).ToList();
+				return c.Movies.OrderByDescending(x=>x.MovieLike).Include(x => x.Category).Include(x => x.Director).ToList();
 			}
 		}
 
@@ -43,7 +43,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderBy(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
+				return c.Movies.OrderByDescending(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderBy(x => x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
+				return c.Movies.OrderByDescending(x => x.MovieDate).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Movies.OrderByDescending(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
+				return c.Movies.OrderBy(x => x.MovieTime).Include(x => x.Category).Include(x => x.Director).Take(5).ToList();
 			}
 		}
 

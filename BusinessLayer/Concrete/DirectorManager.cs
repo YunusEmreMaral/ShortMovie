@@ -28,7 +28,12 @@ namespace BusinessLayer.Concrete
             _directorDal.Delete(t);
         }
 
-        public Director TGetByID(int id)
+		public List<Director> TGet10Director()
+		{
+            return _directorDal.Get10Director();
+		}
+
+		public Director TGetByID(int id)
         {
            return _directorDal.GetByID(id);
         }

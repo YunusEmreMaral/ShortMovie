@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IDirectorDal:IGenericDal<Director>
     {
+        List<Director> Get10Director();
     }
 }
