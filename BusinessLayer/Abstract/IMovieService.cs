@@ -18,5 +18,7 @@ namespace BusinessLayer.Abstract
 		List<Movie> TGetMoviesNew();
 		List<Movie> TGetMoviesShort();
 		List<Movie> TGetMoviesLong();
+		List<Movie> TGetLast5Movie();
+
 	}
 }

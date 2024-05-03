@@ -18,6 +18,7 @@ namespace DataAccessLayer.Abstract
         List<Movie> GetMoviesNew();
         List<Movie> GetMoviesShort();
         List<Movie> GetMoviesLong();
+        List<Movie> GetLast5Movie();
 
 
             }

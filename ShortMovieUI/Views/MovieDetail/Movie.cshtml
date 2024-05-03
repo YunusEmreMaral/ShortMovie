@@ -23,11 +23,11 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="blog-detail-ct">
-					<h1 class="animate__animated animate__slideInLeft animate__delay-1s">@Model.MovieName</h1>
+					<h1 class="animate__animated animate__slideInLeft animate__delay-1s" >@Model.MovieName</h1>
 					<span class="time">@Model.MovieDate</span>
 					<iframe width="900" height="500" src="@Model.MovieLink" title="@Model.MovieName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>			
 					<br /><br />
-					<h3>@Model.MovieName</h3>
+					<h3 style="color:white;">@Model.MovieName</h3>
 					<br />
 					<p>
 @Model.MovieDescription
@@ -69,36 +69,18 @@ Bu ve bunun gibi birçok filmi sitemizde bulabilirsin . Lütfen gezinmeye devam 
 
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
+
+
 					@await Component.InvokeAsync("_MovieDetailsCategories")
 
+					@await Component.InvokeAsync("_MovieDetailsLast5Movie")
+
 					
-					<div class="sb-recentpost sb-it">
-						<h4 class="sb-title">most popular</h4>
-						<div class="recent-item">
-							<span>01</span><h6><a href="#">Korea Box Office: Beauty and the Beast Wins Fourth</a></h6>
+					
+					<a href="#"><div class="ads" style="width:300px">
+						<img src="~/images/bagis2.gif" alt="">
 						</div>
-						<div class="recent-item">
-							<span>02</span><h6><a href="#">Homeland Finale Includes Shocking Death </a></h6>
-						</div>
-						<div class="recent-item">
-							<span>03</span><h6><a href="#">Fate of the Furious Reviews What the Critics Saying</a></h6>
-						</div>
-					</div>
-					<div class="sb-tags sb-it">
-						<h4 class="sb-title">tags</h4>
-						<ul class="tag-items">
-							<li><a href="#">Batman</a></li>
-							<li><a href="#">film</a></li>
-							<li><a href="#">homeland</a></li>
-							<li><a href="#">Fast & Furious</a></li>
-							<li><a href="#">Dead Walker</a></li>
-							<li><a href="#">King</a></li>
-							<li><a href="#">Beauty</a></li>
-						</ul>
-					</div>
-					<div class="ads">
-						<img src="~/Film-Review-Movie-Database/images/uploads/ads1.png" alt="">
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>

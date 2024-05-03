@@ -13,6 +13,14 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EfMovieRepository : GenericRepository<Movie>, IMovieDal
 	{
+		public List<Movie> GetLast5Movie()
+		{
+			using (var c = new Context())
+			{
+				return c.Movies.OrderByDescending(x => x.MovieID).Take(5).ToList();
+			}
+		}
+
 		//SIRALAMALARA BAKILACAK TEKRARDAN DÜŞÜNÜLECEK
 
 		public List<Movie> GetMoviesAdvices()

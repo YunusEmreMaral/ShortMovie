@@ -1,0 +1,17 @@
+﻿@model List<Movie>
+@{
+	int i = 0; 
+}
+<div class="sb-recentpost sb-it">
+	<h4 class="sb-title">Son Filmler</h4>
+
+	@foreach(var item in Model)
+	{
+		i++;
+		<div class="recent-item">
+			<span>@i</span><h6><a style="font-size:2rem" href="#">@item.MovieName</a></h6>
+		</div>
+	}
+	
+	
+</div>
