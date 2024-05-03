@@ -23,7 +23,12 @@ namespace BusinessLayer.Concrete
             _commentDal.Insert(t);
         }
 
-        public void TDelete(Comment t)
+		public List<Comment> TCommentListThisMovie(int id)
+		{
+            return _commentDal.CommentListThisMovie(id);
+		}
+
+		public void TDelete(Comment t)
         {
             _commentDal.Delete(t);
         }

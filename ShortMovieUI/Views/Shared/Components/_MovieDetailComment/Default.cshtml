@@ -1,0 +1,20 @@
+﻿@model List<Comment>
+
+<div class="comments">
+    <h4>Yorumlar</h4>
+    @foreach (var item in Model)
+    {
+        <div class="cmt-item flex-it" style="display: flex; justify-content: flex-start;">
+            <img src="~/images/profil.png" style="width:60px;" alt="">
+            <div class="author-infor">
+                <div class="flex-start">
+                    <h6><a href="#">@item.CommentNameSurname</a></h6>
+                </div>
+                <br />
+                <p>@item.CommentContent</p>
+                <br />
+                <span class="time">@item.CommentDate</span>
+            </div>
+        </div>
+    }
+</div>

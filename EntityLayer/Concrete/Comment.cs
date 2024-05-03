@@ -16,5 +16,8 @@ namespace EntityLayer.Concrete
         public string CommentContent { get; set; }
         public DateTime CommentDate { get; set; }
 
-    }
+		public int MovieID { get; set; }
+        public Movie Movie { get; set; }
+
+	}
 }

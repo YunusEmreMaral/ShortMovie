@@ -16,6 +16,9 @@ builder.Services.AddScoped<IMovieDal, EfMovieRepository>();
 builder.Services.AddScoped<IDirectorService, DirectorManager>();
 builder.Services.AddScoped<IDirectorDal, EfDirectorRepository>();
 
+builder.Services.AddScoped<ICommentService, CommentManager>();
+builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
