@@ -1,0 +1,22 @@
+﻿
+
+@model List<Category>
+<div class="sb-cate sb-it">
+	<h4 class="sb-title  animate__animated animate__slideInRight animate__delay-1s">Kategoriler</h4>
+	<ul>
+		@foreach(var item in Model){
+
+			<li><a class="custom" href="#">@item.CategoryName</a></li>
+
+		}
+		
+	</ul>
+</div>
+<style>
+	.custom:hover {
+		border: 2px solid white;
+		padding: 5px;
+		transform: scale(1.1);
+		transition: transform 0.3s;
+	}
+</style>

@@ -4,12 +4,13 @@
     Layout = "~/Views/Shared/MovieLayout.cshtml";
 }
 
+
 <div class="hero common-hero" style="height:300px;" >
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1> Film Sayfası</h1>
+					<h1 class="animate__animated animate__bounceInDown animate__delay-1s	"> Film Sayfası</h1>
 					
 				</div>
 			</div>
@@ -22,7 +23,7 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="blog-detail-ct">
-					<h1>@Model.MovieName</h1>
+					<h1 class="animate__animated animate__slideInLeft animate__delay-1s">@Model.MovieName</h1>
 					<span class="time">@Model.MovieDate</span>
 					<iframe width="900" height="500" src="@Model.MovieLink" title="@Model.MovieName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>			
 					<br /><br />
@@ -68,18 +69,9 @@ Bu ve bunun gibi birçok filmi sitemizde bulabilirsin . Lütfen gezinmeye devam 
 
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
-					@await Component.InvokeAsync("_MovieDetailComment", new { movieId = ViewBag.MovieId })
+					@await Component.InvokeAsync("_MovieDetailsCategories")
 
-					<div class="sb-cate sb-it">
-						<h4 class="sb-title">Categories</h4>
-						<ul>
-							<li><a href="#">Awards (50)</a></li>
-							<li><a href="#">Box office (38)</a></li>
-							<li><a href="#">Film reviews (72)</a></li>
-							<li><a href="#">News (45)</a></li>
-							<li><a href="#">Global (06)</a></li>
-						</ul>
-					</div>
+					
 					<div class="sb-recentpost sb-it">
 						<h4 class="sb-title">most popular</h4>
 						<div class="recent-item">

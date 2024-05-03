@@ -19,6 +19,9 @@ builder.Services.AddScoped<IDirectorDal, EfDirectorRepository>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
 builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
 
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
