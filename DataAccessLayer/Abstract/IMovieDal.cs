@@ -20,6 +20,8 @@ namespace DataAccessLayer.Abstract
         List<Movie> GetMoviesLong();
         List<Movie> GetLast5Movie();
 
+        List<Movie> GetChooseCategoryMovies(int id);
+
 
             }
 }

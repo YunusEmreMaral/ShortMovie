@@ -18,12 +18,19 @@ namespace BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void TAdd(Category t)
+		
+
+		public void TAdd(Category t)
         {
             _categoryDal.Insert(t);
         }
 
-        public void TDelete(Category t)
+		public List<Category> TCategoriesWithMovies()
+		{
+            return _categoryDal.CategoriesWithMovies();
+		}
+
+		public void TDelete(Category t)
         {
             _categoryDal.Delete(t);
         }
@@ -33,7 +40,9 @@ namespace BusinessLayer.Concrete
             return _categoryDal.GetByID(id);
         }
 
-        public List<Category> TGetList()
+		
+
+		public List<Category> TGetList()
         {
             return _categoryDal.GetList();
         }

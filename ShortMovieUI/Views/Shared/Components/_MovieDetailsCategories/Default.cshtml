@@ -2,11 +2,11 @@
 
 @model List<Category>
 <div class="sb-cate sb-it">
-	<h4 class="sb-title  animate__animated animate__slideInRight animate__delay-1s">Kategoriler</h4>
+	<h4 class="sb-title  animate__animated animate__slideInRight ">Kategoriler</h4>
 	<ul >
 		@foreach(var item in Model){
 
-			<li><a style="font-size:20px;" class="custom" href="#">@item.CategoryName</a></li>
+			<li><a style="font-size:20px;" class="custom" href="@Url.Action("Category", "MovieCategory", new { id = item.CategoryID })">@item.CategoryName</a></li>
 
 		}
 		

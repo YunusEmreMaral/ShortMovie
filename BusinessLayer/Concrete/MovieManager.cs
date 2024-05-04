@@ -33,6 +33,11 @@ namespace BusinessLayer.Concrete
             return _movieDal.GetByID(id);
         }
 
+		public List<Movie> TGetChooseCategoryMovies(int id)
+		{
+			return _movieDal.GetChooseCategoryMovies(id);
+		}
+
 		public List<Movie> TGetLast5Movie()
 		{
 			return _movieDal.GetLast5Movie();

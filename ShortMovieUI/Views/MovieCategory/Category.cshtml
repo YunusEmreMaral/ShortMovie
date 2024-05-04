@@ -1,0 +1,81 @@
+﻿@model List<Movie>
+@{
+    ViewData["Title"] = "Category";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+
+
+
+<div class="hero common-hero" style="height:300px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+                    <h1 class="animate__animated animate__bounceInDown "> @ViewBag.categoryname</h1>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- blog grid section-->
+<div class="page-single" style="margin:0px; padding:0px;">
+    <br />
+	<div class="container">
+        <div class="row" >
+
+
+            <div class="col-md-9 col-sm-12 col-xs-12" >
+                @for (int j = 0; j < ViewBag.count; j++)
+                {
+                    <div class="row" >
+                        @for (int i = 0; i < 3; i++)
+                        {
+                            var index = j * 3 + i;
+                            if (index < Model.Count)
+                            {
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="blog-item-style-2">
+                                        <a href="blogdetail.html" style="display: block; overflow: hidden; width: 300px; height: 400px;">
+                                            <img src="@Model[index].MovieImage" style="object-fit: cover; width: 300px; height: 400px;" alt="">
+                                        </a>
+                                        <div class="blog-it-infor">
+                                            <h3><a href="blogdetail.html">@Model[index].MovieName</a></h3>
+                                            <span class="time">@Model[index].MovieDate</span>
+                                            <p>@Model[index].MovieDescription</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+
+
+
+
+
+
+
+
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<div class="sidebar">
+
+
+					@await Component.InvokeAsync("_MovieDetailsCategories")
+
+					@await Component.InvokeAsync("_MovieDetailsLast5Movie")
+
+
+
+					<a href="#">
+						<div class="ads" style="width:300px">
+							<img src="~/images/bagis2.gif" alt="">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
