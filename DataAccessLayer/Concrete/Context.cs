@@ -23,6 +23,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Director> Directors { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<NewsLetter> NewsLetters { get; set; }
+        public DbSet<Personal> Personals { get; set; }
 
     }
 }

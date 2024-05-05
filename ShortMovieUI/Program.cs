@@ -15,7 +15,7 @@ builder.Services.AddScoped<IMovieService, MovieManager>();
 builder.Services.AddScoped<IMovieDal, EfMovieRepository>();
 
 builder.Services.AddScoped<IDirectorService, DirectorManager>();
-builder.Services.AddScoped<IDirectorDal, EfDirectorRepository>();
+builder.Services.AddScoped<IDirectorDaL, EfDirectorRepository>();
 
 builder.Services.AddScoped<ICommentService, CommentManager>();
 builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
@@ -25,6 +25,9 @@ builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
 
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutRepository>();
+
+builder.Services.AddScoped<IPersonalService, PersonalManager>();
+builder.Services.AddScoped<IPersonalDal, EfPersonalsRepository>();
 
 var app = builder.Build();
 

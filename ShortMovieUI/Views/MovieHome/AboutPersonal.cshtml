@@ -1,0 +1,60 @@
+﻿@model Personal
+@{
+    ViewData["Title"] = "AboutPersonal";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+<div class="hero common-hero" style="height:300px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1 class="animate__animated animate__bounceInDown 	">Kişisel Mesaj</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="page-single" style="margin:0px; padding:0px;">
+	<br />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="blog-detail-ct">
+                    <div class="comment-form">
+                        <h4>Leave a comment</h4>
+                        <form method="post" asp-action="AboutPersonal" asp-controller="MovieHome">
+
+                            <input type="hidden" name="PersonalName" value="@ViewBag.name">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Konu" required name="Subject">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Mail Adresiniz" required name="Mail">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea name="Content" id="" required placeholder="Mesajınız" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="submit" type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+				</div>
+			</div>
+
+
+
+			
+		</div>
+	</div>
+</div>

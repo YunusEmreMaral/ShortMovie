@@ -18,8 +18,6 @@ namespace BusinessLayer.Container
 			services.AddScoped<IMovieService, MovieManager>();
 			services.AddScoped<IMovieDal, EfMovieRepository>();
 			
-			services.AddScoped<IDirectorService, DirectorManager>();
-			services.AddScoped<IDirectorDal, EfDirectorRepository>();
 
 		}
 	}

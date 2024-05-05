@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IDirectorDaL:IGenericDal<Director>
-    {
-        List<Director> Get10Director();
-    }
+	public interface IPersonalDal : IGenericDal<Personal>
+	{
+	}
 }

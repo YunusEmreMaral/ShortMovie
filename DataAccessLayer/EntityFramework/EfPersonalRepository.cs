@@ -10,14 +10,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-	public class EfDirectorRepository : GenericRepository<Director>, IDirectorDaL
+	public class EfPersonalsRepository : GenericRepository<Personal>, IPersonalDal
+
 	{
-		public List<Director> Get10Director()
-		{
-			using (var c = new Context())
-			{
-				return c.Directors.Take(5).ToList();
-			}
-		}
+		
 	}
 }

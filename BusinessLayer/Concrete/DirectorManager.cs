@@ -11,9 +11,9 @@ namespace BusinessLayer.Concrete
 {
     public class DirectorManager:IDirectorService
     {
-        IDirectorDal _directorDal;
+        IDirectorDaL _directorDal;
 
-        public DirectorManager(IDirectorDal directorDal)
+        public DirectorManager(IDirectorDaL directorDal)
         {
             _directorDal = directorDal;
         }
