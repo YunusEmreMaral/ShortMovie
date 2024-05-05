@@ -1,0 +1,293 @@
+﻿@model About
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+<style>
+
+
+
+
+.card {
+  
+  height: 37rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.card__name {
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+
+.card__image {
+
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+   
+  box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
+}
+
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58cdd1;
+  color: #58afd1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0rem;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #eb196e;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 0.75em 2em;
+  letter-spacing: 0.05rem;
+  margin: 1em;
+  width: 13rem;
+}
+
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+
+.social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1em;
+}
+
+.social-icons i {
+  color: #fff;
+  position: absolute;
+  top: 0.95em;
+  left: 0.96em;
+  transition: all 265ms ease-out;
+}
+
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icons a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #ff003c, #c648c8);
+  transition: all 265ms ease-out;
+}
+
+.social-icons a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+
+.social-icons a:hover i {
+  transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #ff003c;
+  background: -webkit-linear-gradient(45deg, #ff003c, #c648c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+
+
+
+</style>
+
+<div class="hero common-hero" style="height:300px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1 class="animate__animated animate__bounceInDown 	"> Hakkımızda</h1>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+ <div style="position:relative; top:48%;" class="page-single movie-single cebleb-single">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="mv-ceb">
+					<img src="~/Film-Review-Movie-Database/images/uploads/cebsingle2.png" alt="">
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="movie-single-ct">
+					<h1 class="bd-hd">Biz Kimiz ?</h1>
+				
+				<div class="movie-tabs">
+						<div class="tabs">
+							<ul class="tab-links tabs-mv">
+								<li class="active"><a href="#overviewceb">Tanıtım</a></li>
+								<li><a href="#biography"> Vizyon</a></li>
+								<li><a href="#mediaceb"> Misyon</a></li>
+								<li><a href="#filmography">Kişisel</a></li>
+							</ul>
+							<div class="tab-content">
+								<div id="overviewceb" class="tab active">
+									<div class="row">
+										<div class="col-md-12 col-sm-12 col-xs-12">
+											<p style="font-size:1.7rem;">
+														@Model.AboutContent1											</p>
+											
+											<!-- movie cast -->
+											
+										</div>
+										
+									</div>
+								</div>
+
+								<div id="biography" class="tab">
+									<div class="row">
+										
+										<p style="font-size:1.7rem;">@Model.AboutContent2</p>
+
+										
+									</div>
+								</div>
+								<div id="mediaceb" class="tab">
+									<div class="row">
+										
+										<p style="font-size:1.7rem;">@Model.AboutContent3</p>
+									</div>
+								</div>
+								<div id="filmography" class="tab">
+									<div class="row">
+										
+										<div class="  col-md-6  col-sm-12" style=" justify-content:center; align-items:center;">
+											<div class="card">
+												<img src="~/images/sirin.png" alt="Person" class="card__image">
+												<p class="card__name">Yunus Emre Maral</p>
+
+												<div style="margin:5px;" class="social-icons">
+
+													Web Developer
+
+												</div>
+												<ul class="social-icons">
+													<li><a href="https://www.linkedin.com/in/yunusemremaral/"><i class="fa fa-linkedin"></i></a></li>
+													<li><a href="https://github.com/YunusEmreMaral"><i class="fa-brands fa-github"></i></a></li>
+													<li><a href="https://www.instagram.com/yunus41emree/"><i class="fa fa-instagram"></i></a></li>
+													<li>
+														<a href="mailto:maralyunus41@gmail.com.">
+															<i class="fa fa-envelope"></i>
+														</a>
+													</li>
+
+												</ul>
+												<button class="btn draw-border">Mesaj</button>
+
+											</div>
+										</div>	
+										<div class="  col-md-6  col-sm-12" style=" justify-content:center; align-items:center;">
+											<div class="card">
+												<img src="~/images/sirin.png" alt="Person" class="card__image">
+												<p class="card__name">Yunus Emre Maral</p>
+
+												<div style="margin:5px;" class="social-icons">
+
+													Web Developer
+
+												</div>
+												<ul class="social-icons">
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+													<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+													<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+													<li>
+														<a href="#">
+															<i class="fa fa-envelope"></i>
+														</a>
+													</li>
+												</ul>
+												<button class="btn draw-border">Mesaj</button>
+
+											</div>
+										</div>
+
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

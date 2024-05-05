@@ -16,7 +16,7 @@ namespace DataAccessLayer.EntityFramework
 		{
 			using (var c = new Context())
 			{
-				return c.Directors.Take(10).ToList();
+				return c.Directors.Take(5).ToList();
 			}
 		}
 	}

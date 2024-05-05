@@ -6,6 +6,7 @@ using DataAccessLayer.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
@@ -21,6 +22,9 @@ builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
 
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
+
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutRepository>();
 
 var app = builder.Build();
 

@@ -16,6 +16,7 @@ namespace EntityLayer.Concrete
         public string AboutContent1 { get; set; }
         public string AboutTitle2 { get; set; }
         public string AboutContent2 { get; set; }
+        public string AboutContent3 { get; set; }
         public string AboutImage1 { get; set; }
         public string AboutImage2 { get; set; }
     }
