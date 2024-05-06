@@ -37,5 +37,8 @@ namespace ShortMovieUI.Controllers
 			_personalService.TAdd(personal);
             return RedirectToAction("Index","MovieHome");
 		}
+
+		public IActionResult ErrorPage404() => View();
+		
 	}
 }

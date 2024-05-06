@@ -40,6 +40,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
+app.UseStatusCodePagesWithReExecute("/MovieHome/ErrorPage404");
 
 app.UseRouting();
 

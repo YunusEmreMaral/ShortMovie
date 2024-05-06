@@ -59,24 +59,30 @@
 						@foreach(var item in Model){
 
 						<div class="col-md-4">
+
 							<div class="ceb-item-style-2" style="background-image: url('@item.CategoryImage');">
+								
 
 								<div class="ceb-infor">
-									<h2><a style="font-size: 2rem;" href="celebritysingle.html">@item.CategoryName</a></h2>
+										<h2><a style="font-size: 2rem;" href="/MovieCategory/Category/@item.CategoryID">@item.CategoryName</a></h2>
 									@if (item.Movies.Count>0)
 									{
+										<a href="/MovieCategory/Category/@item.CategoryID">
 										<span style="color:white;">@item.Movies.Count Adet Film Bulunmaktadır.</span>
+										</a>
 									}
 									else
-									{
+									{<a href="/MovieCategory/Category/@item.CategoryID">
 										<span style="color:white;">Film Bulunmamaktadır.</span>
+										</a>
 									}
 
 								</div>
+
+
+								</div>
 							</div>
-
-						</div>
-
+						
 
 
 

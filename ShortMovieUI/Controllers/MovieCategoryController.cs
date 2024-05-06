@@ -20,6 +20,7 @@ namespace ShortMovieUI.Controllers
 		public IActionResult Category(int id)
 		{
 			 ViewBag.categoryname= _categoryService.TGetByID(id).CategoryName;
+
 			var movies = _movieService.TGetChooseCategoryMovies(id);
 			ViewBag.count = (movies.Count / 3) + 1; 
 			return View(movies);
