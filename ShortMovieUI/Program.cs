@@ -29,6 +29,9 @@ builder.Services.AddScoped<IAboutDal, EfAboutRepository>();
 builder.Services.AddScoped<IPersonalService, PersonalManager>();
 builder.Services.AddScoped<IPersonalDal, EfPersonalsRepository>();
 
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

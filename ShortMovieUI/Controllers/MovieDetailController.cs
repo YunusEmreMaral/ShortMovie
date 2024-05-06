@@ -18,7 +18,7 @@ namespace ShortMovieUI.Controllers
 
 
 		public IActionResult Movie(int id)
-		{
+		{	
 			var movie = _movieService.TGetByID(id);
 			ViewBag.MovieId = id;
 			return View(movie);

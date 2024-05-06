@@ -25,7 +25,7 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="blog-detail-ct">
 					<h1 class="animate__animated animate__slideInLeft " >@Model.MovieName</h1>
-					<span class="time">@Model.MovieDate</span>
+					<span class="time">@Model.MovieDate.Year</span>
 					<iframe width="900" height="500" src="@Model.MovieLink" title="@Model.MovieName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>			
 					<br /><br />
 					<h3 style="color:white;">@Model.MovieName</h3>
@@ -35,14 +35,15 @@
 </p>
 
 					<div class="flex-it flex-ct">
-						<p>
+
+						<p style="font-size:20px;line-height: 45px;	 font-weight:300; text-align:center;">
 Bu ve bunun gibi birçok filmi sitemizde bulabilirsin . Lütfen gezinmeye devam edin .						</p>
 						<img src="@Model.MovieImage" alt="">
 					</div>
 					<!-- share link -->
 					<div class="flex-it share-tag">
 						<div class="social-link">
-							<h4>Share it</h4>
+							<h4>Paylaş</h4>
 							<a href="javascript:void(0)" onclick="shareOnFacebook()"><i class="ion-social-facebook"></i></a>
 							<a href="javascript:void(0)" onclick="shareOnTwitter()"><i class="ion-social-twitter"></i></a>
 							<a href="instagram://library?AssetPath=<URL>&InstagramCaption=<YAZI>" target="_blank"><i class="ion-social-instagram"></i></a>
@@ -50,9 +51,9 @@ Bu ve bunun gibi birçok filmi sitemizde bulabilirsin . Lütfen gezinmeye devam 
 						</div>
 						<div class="right-it">
 							<h4>Tags</h4>
-							<a href="#">Gray,</a>
-							<a href="#">Film,</a>
-							<a href="#">Poster</a>
+							<a href="">Gray,</a>
+							<a href="">Film,</a>
+							<a href="">Poster</a>
 						</div>
 					</div>
 					<!-- comment items -->

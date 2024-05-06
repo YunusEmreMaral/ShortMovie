@@ -49,7 +49,12 @@ namespace BusinessLayer.Concrete
             return _movieDal.GetList();
         }
 
-		public List<Movie> TGetMoviesAdvices()
+        public int TGetMovieId(string mood)
+        {
+			return _movieDal.GetMovieId(mood);
+        }
+
+        public List<Movie> TGetMoviesAdvices()
 		{
 			return _movieDal.GetMoviesAdvices();
 		}

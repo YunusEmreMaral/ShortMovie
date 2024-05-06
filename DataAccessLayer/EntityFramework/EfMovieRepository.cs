@@ -29,9 +29,41 @@ namespace DataAccessLayer.EntityFramework
 			}
 		}
 
-		//SIRALAMALARA BAKILACAK TEKRARDAN DÜŞÜNÜLECEK
+        public int GetMovieId(string mood)
+        {
+			using (var _context = new Context())
+			{
+				var random = new Random();
+				int movieId = 0;
 
-		public List<Movie> GetMoviesAdvices()
+				// Belirli bir mood'a göre filmleri seçme
+				IQueryable<Movie> selectedMoviesQuery = mood switch
+				{
+					"Heyecan" => _context.Movies.Where(m => m.Category.CategoryName == "Korku" || m.Category.CategoryName == "Aksiyon"),
+					"Eğlence" => _context.Movies.Where(m => m.Category.CategoryName == "Komedi"),
+					"Mutlu" => _context.Movies.Where(m => m.Category.CategoryName == "Romantik" || m.Category.CategoryName == "Komedi"),
+					"Üzgün" => _context.Movies.Where(m => m.Category.CategoryName == "Dram"),
+					_ => throw new ArgumentException("Geçersiz duygu durumu", nameof(mood))
+				};
+
+				// Seçilen filmler arasından rastgele bir film seçme
+				var selectedMovies = selectedMoviesQuery.ToList();
+				if (selectedMovies.Any())
+				{
+					int randomIndex = random.Next(0, selectedMovies.Count);
+					movieId = selectedMovies[randomIndex].MovieID;
+				}
+
+				return movieId;
+
+			
+            }
+
+        }
+
+        //SIRALAMALARA BAKILACAK TEKRARDAN DÜŞÜNÜLECEK
+
+        public List<Movie> GetMoviesAdvices()
 		{
 			using (var c = new Context())
 			{

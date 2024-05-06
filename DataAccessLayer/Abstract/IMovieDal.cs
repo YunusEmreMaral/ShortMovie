@@ -23,5 +23,8 @@ namespace DataAccessLayer.Abstract
         List<Movie> GetChooseCategoryMovies(int id);
 
 
+        int  GetMovieId(string mood);
+
+
             }
 }

@@ -1,0 +1,68 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "ContactUs";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+
+<div class="hero common-hero" style="height:300px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1 class="animate__animated animate__bounceInDown 	">İletişim Sayfası</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="page-single" style="margin:0px; padding:0px;">
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="blog-detail-ct">
+                    <div class="comment-form">
+                        <h4>Mesajınızı Gönderin</h4>
+                        <form method="post" asp-action="ContactUs" asp-controller="MovieContact">
+                            <input type="hidden" name="ContactDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="İsim Soyisim" required name="ContactUserName">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Mail" required name="ContactMail">
+                                </div>
+                               
+                            </div>
+                            <div class="row" >
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Konu" required name="ContactSubject">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea name="ContactMessage" id="" required placeholder="Mesajınız" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="submit" type="submit" value="Gönder">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+

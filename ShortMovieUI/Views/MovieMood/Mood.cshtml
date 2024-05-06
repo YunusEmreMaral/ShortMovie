@@ -1,0 +1,169 @@
+﻿@{
+    ViewData["Title"] = "Mood";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+<style>
+    .containers {
+        position: relative;
+        width: 1100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Doğru yazım: flex-wrap */
+        padding: 30px;
+    }
+
+    .container .card {
+        position: relative;
+        max-width: 300px;
+        height: 215px;
+        background-color: #fff;
+        margin: 30px 10px;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s ease-in-out;
+        border-radius: 15px;
+        border: solid 5px yellow;
+    }
+
+        .container .card:hover {
+            height: 320px;
+        }
+
+        .container .card .image {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            top: -40%;
+            left: 8px;
+            z-index: 1;
+        }
+
+            .container .card .image img {
+                max-width: 100%;
+                border-radius: 15px;
+            }
+
+        .container .card .content {
+            position: relative;
+            top: -140px;
+            padding: 10px 15px;
+            color: #111;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        .container .card:hover .content {
+            margin-top: 30px;
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+</style>
+
+
+<div class="hero common-hero" style="height:300px;">
+    <div class="containers ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1 class="animate__animated animate__bounceInDown">Mood'un Ne Bakalım?</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-single" style="margin:0px; padding:0px;">
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="card" onclick="getMovieIdByMood('Heyecan')">
+                        <div class="image">
+                            <img src="/images/scream.png">
+                        </div>
+                        <div class="content">
+                            <h3>Heyecan</h3>
+                            <br />
+                            <p style="color:black;">
+                                Yüreğin hızla çarptığı, adrenalinin yükseldiği anlarla dolu bir duygu yaşamak ister misin? Tıklaaa!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="card" onclick="getMovieIdByMood('Eğlence')">
+                        <div class="image">
+                            <img src="/images/joy.png">
+                        </div>
+                        <div class="content">
+                            <h3>Eğlence</h3>
+                            <br />
+                            <p style="color:black;">
+                                Eğer ben gülmek istiyorum diyorsan işte doğru yerdesin. Hemen tıkla!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="card" onclick="getMovieIdByMood('Mutlu')">
+                        <div class="image">
+                            <img src="/images/heart_eyes.png">
+                        </div>
+                        <div class="content">
+                            <h3>Mutlu</h3>
+                            <br />
+                            <p style="color:black;">
+                                Ben mutlu olmak istiyorum. Sevgi aşk ver bana dediysen durma. Tıklaaa!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="card" onclick="getMovieIdByMood('Üzüntü')">
+                        <div class="image">
+                            <img src="/images/pensive.png">
+                        </div>
+                        <div class="content">
+                            <h3>Üzgün</h3>
+                            <br />
+                            <p style="color:black;">
+                                Dramatik bir şeyler izleyip duygularının ortaya çıkmasını istiyorsan da buraya tıklıyorsun...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getMovieIdByMood(mood) {
+        $.ajax({
+            type: "POST",
+            url: "/MovieMood/Mood",
+            data: { mood: mood },
+            success: function (response) {
+                // AJAX isteğinin başarılı olması durumunda, response içinde gelen id değerini alıyoruz
+                var id = response.id;
+                // Elde edilen id ile yönlendirme yapıyoruz
+                window.location.href = "/MovieDetail/Movie?id=" + id;
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+
+    }
+</script>

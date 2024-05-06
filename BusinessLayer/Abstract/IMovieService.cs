@@ -22,6 +22,9 @@ namespace BusinessLayer.Abstract
 
 		List<Movie> TGetChooseCategoryMovies(int id);
 
+        int TGetMovieId(string mood);
 
-	}
+
+
+    }
 }
