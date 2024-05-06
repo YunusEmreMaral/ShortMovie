@@ -13,6 +13,14 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EfMovieRepository : GenericRepository<Movie>, IMovieDal
 	{
+		public List<Movie> DirectorsMovies(int id)
+		{
+			using (var c = new Context())
+			{
+				return c.Movies.Where(x => x.DirectorID == id).OrderByDescending(x => x.MovieID).ToList();
+			}
+		}
+
 		public List<Movie> GetChooseCategoryMovies(int id)
 		{
 			using (var c = new Context())

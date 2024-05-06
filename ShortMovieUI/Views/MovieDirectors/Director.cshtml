@@ -1,0 +1,61 @@
+﻿@model Director
+@{
+    ViewData["Title"] = "Director";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+
+<div class="hero common-hero" style="height:300px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1 class="animate__animated animate__bounceInDown "> Yönetmen Kişisel</h1>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="position:relative; top:48%;" class="page-single movie-single cebleb-single">
+    <div class="container">
+        <div class="row ipad-width" style="margin:0px;">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="mv-ceb">
+                    <img src="@Model.DirectorImage" alt="">
+                </div>
+            </div>
+            <div style="" class="col-md-8 col-sm-12 col-xs-12">
+                <div class="movie-single-ct">
+                    <h1 class="bd-hd">@Model.DirectorNameSurname</h1>
+                    <p class="ceb-single">Yönetmen</p>
+                    <div class="social-link cebsingle-socail">
+                        <a href="#"><i class="ion-social-facebook"></i></a>
+                        <a href="#"><i class="ion-social-twitter"></i></a>
+                        <a href="#"><i class="ion-social-googleplus"></i></a>
+                        <a href="#"><i class="ion-social-linkedin"></i></a>
+                    </div>
+                    <div class="movie-tabs">
+                        <div class="tabs">
+                            <ul class="tab-links tabs-mv">
+                                <li class="active"><a href="#overviewceb">Filmler</a></li>
+                            </ul>
+                            <div class="tab-content" style="padding-inline-start:50px;">
+                                <div id="overviewceb" class="tab active">
+                                    <div class="row">
+                                        <div  class="title-hd-sm">
+                                            <h4>Kısa Filmler </h4>
+                                        </div>
+                                        @await Component.InvokeAsync("_DirectorDetail", new { directorid = ViewBag.directorid })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

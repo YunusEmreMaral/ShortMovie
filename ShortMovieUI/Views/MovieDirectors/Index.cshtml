@@ -1,0 +1,50 @@
+﻿@model List<Director>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/MovieLayout.cshtml";
+}
+<div class="hero common-hero" style="height:300px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1 class="animate__animated animate__bounceInDown ">Yönetmenler</h1>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- celebrity grid v2 section-->
+<div class="page-single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				
+				
+					<div class="row">
+					@foreach (var item in Model)
+					{
+						<div class="col-md-4">
+							<a asp-action="Director" asp-route-id="@item.DirectorID" asp-controller="MovieDirectors">
+								<div class="ceb-item-style-2">
+								<img style="width:100px;" src="@item.DirectorImage" alt="">
+								<div style="margin-left:10px;" class="ceb-infor">
+										<h2><a asp-action ="Director" asp-route-id="@item.DirectorID" asp-controller="MovieDirectors">@item.DirectorNameSurname
+							</a></h2>
+									<span>Yönetmen</span>
+								</div>
+							</div> </a>
+						</div>
+					}
+				</div>
+				
+				
+				
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+

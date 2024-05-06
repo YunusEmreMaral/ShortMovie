@@ -25,6 +25,10 @@ namespace DataAccessLayer.Abstract
 
         int  GetMovieId(string mood);
 
+        List<Movie> DirectorsMovies(int id);
+
+
+
 
             }
 }

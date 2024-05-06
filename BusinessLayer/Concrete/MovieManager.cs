@@ -28,7 +28,12 @@ namespace BusinessLayer.Concrete
             _movieDal.Delete(t);
         }
 
-        public Movie TGetByID(int id)
+		public List<Movie> TDirectorsMovies(int id)
+		{
+			return _movieDal.DirectorsMovies(id);
+		}
+
+		public Movie TGetByID(int id)
         {
             return _movieDal.GetByID(id);
         }

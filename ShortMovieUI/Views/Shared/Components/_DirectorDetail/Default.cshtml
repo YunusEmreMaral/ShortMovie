@@ -1,0 +1,18 @@
+﻿@model List<Movie>
+
+
+<div class="mvsingle-item media-item">
+    @foreach (var item in Model)
+    {
+    <a href="/MovieDetail/Movie/@item.MovieID">    <div class="vd-item" >
+            <div class="vd-it" style="padding:5px;  width:170px; height:250px;;">
+                <img src="@item.MovieImage" style="width:100%; height:100%; object-fit:cover;" alt="">
+            </div>
+            <div class="vd-infor">
+                <h6 style="justify-content:center;"><a href="#">@item.MovieName</a></h6>
+                <p class="time">@item.MovieTime Dakika</p>
+            </div>
+        </div> </a>
+    }
+</div>
+
