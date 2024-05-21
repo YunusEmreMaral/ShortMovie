@@ -19,7 +19,7 @@ namespace ShortMovieUI.Controllers
         [HttpGet]
 		public IActionResult Category(int id)
 		{
-			 ViewBag.categoryname= _categoryService.TGetByID(id).CategoryName;
+			ViewBag.categoryname= _categoryService.TGetByID(id).CategoryName;
 
 			var movies = _movieService.TGetChooseCategoryMovies(id);
 			ViewBag.count = (movies.Count / 3) + 1; 
@@ -33,6 +33,14 @@ namespace ShortMovieUI.Controllers
 			return View(categories);
 		}
 
-		
+		public IActionResult movieList()
+		{
+			var moviesCD = _movieService.TMovieWithCategoryAndDirector();
+			
+			ViewBag.count = moviesCD.Count;
+			return View(moviesCD);
+		}
+
+
 	}
 }

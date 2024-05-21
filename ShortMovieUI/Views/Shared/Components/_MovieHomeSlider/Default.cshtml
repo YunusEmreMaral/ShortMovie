@@ -1,5 +1,19 @@
 ﻿@model List<Movie>
 
+	<style>
+
+		.slider-img-div{
+		padding: 5px;
+		height: 437px;
+		}
+		.slider-img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		}
+
+	</style>
+
 <div class="slick-multiItemSlider">
 	@foreach(var item in Model)
 	{
@@ -7,11 +21,12 @@
 			<a href="/MovieDetail/Movie/@item.MovieID">
 				<div class="mv-img">
 			
-					<div style="padding:5px; width:285px; height:437px;">
-					<img src="@item.MovieImage" style="width:100%; height:100%; object-fit:cover;" alt="">
+					<div class="slider-img-div">
+					     <img class="slider-img" src="@item.MovieImage" alt="">
+				    </div>
+
 				</div>
-			
-			</div>	</a>
+			</a>
 			<div class="title-in">
 				<div class="cate">
 				</div>
@@ -20,6 +35,4 @@
 			</div>
 		</div>
 	}
-	
-	
 </div>
