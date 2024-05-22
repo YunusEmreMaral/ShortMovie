@@ -5,6 +5,58 @@
 }
 <style>
 
+	#filmography{
+		margin-top: 50px;
+	}
+
+	#filmography .row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@@media (min-width: 769px) {
+		#filmography{
+			margin-top: 100px;
+		}
+	}
+
+	@@media (max-width: 767px) {
+		#filmography, #filmography .row {
+			display: block;
+		}
+
+			#filmography .row div:nth-of-type(1) {
+			margin-bottom:50px;
+		}
+	}
+
+	#overviewceb .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	@@media (max-width: 1440px) {
+		.tabs ul.tab-links
+		#about-ul{
+			display: flex;
+			
+		}
+		 .tabs ul.tabs-mv li {
+		    margin-right: 0;
+	     }
+	}
+
+	@@media (max-width: 767px) {
+		#about-ul {
+			display: flex;
+			margin-bottom: 0;
+		}
+
+		#about-ul li a{
+			font-size: 15px;
+		}
+
+	}
 	.card {
 		height: 37rem;
 		border-radius: 5px;
@@ -177,7 +229,7 @@
 
 					<div class="movie-tabs">
 						<div class="tabs">
-							<ul class="tab-links tabs-mv" style="justify-content: center;">
+							<ul id="about-ul" class="tab-links tabs-mv" style="justify-content: space-between;">
 								<li class="active"><a href="#overviewceb">Tanıtım</a></li>
 								<li><a href="#biography"> Vizyon</a></li>
 								<li><a href="#mediaceb"> Misyon</a></li>
@@ -211,7 +263,7 @@
 										<p style="font-size:1.7rem;">@Model.AboutContent3</p>
 									</div>
 								</div>
-								<div id="filmography" class="tab" style="margin-top:100px">
+								<div id="filmography" class="tab">
 									<div class="row">
 
 										<div class="  col-md-6  col-sm-12" style=" justify-content:center; align-items:center;">
