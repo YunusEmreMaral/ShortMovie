@@ -5,9 +5,6 @@
 }
 <style>
 
-
-
-
 	.card {
 		height: 37rem;
 		border-radius: 5px;
@@ -40,18 +37,18 @@
 		position: relative;
 	}
 
-		.draw-border::before,
-		.draw-border::after {
-			border: 0 solid transparent;
-			box-sizing: border-box;
-			content: '';
-			pointer-events: none;
-			position: absolute;
-			width: 0rem;
-			height: 0;
-			bottom: 0;
-			right: 0;
-		}
+	.draw-border::before,
+	.draw-border::after {
+		border: 0 solid transparent;
+		box-sizing: border-box;
+		content: '';
+		pointer-events: none;
+		position: absolute;
+		width: 0rem;
+		height: 0;
+		bottom: 0;
+		right: 0;
+	}
 
 		.draw-border::before {
 			border-bottom-width: 4px;
@@ -159,40 +156,34 @@
 
 </style>
 
-<div class="hero common-hero" style="height:300px;">
+<div class="hero common-hero" style="height:300px; z-index:99;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
 					<h1 class="animate__animated animate__bounceInDown 	"> Hakkımızda</h1>
-
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div style="position:relative; top:48%;" class="page-single movie-single cebleb-single">
+<div style="position:relative; padding-top:400px;" class="page-single movie-single cebleb-single">
 	<div class="container">
-		<div class="row ipad-width">
-			<div class="col-md-4 col-sm-12 col-xs-12">
-				<div class="mv-ceb">
-					<img src="~/Film-Review-Movie-Database/images/uploads/cebsingle2.png" alt="">
-				</div>
-			</div>
+		<div class="row ipad-width" style="display: flex; justify-content: center; align-items: center; text-align: center;">
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="movie-single-ct">
 					<h1 class="bd-hd">Biz Kimiz ?</h1>
 
 					<div class="movie-tabs">
 						<div class="tabs">
-							<ul class="tab-links tabs-mv">
+							<ul class="tab-links tabs-mv" style="justify-content: center;">
 								<li class="active"><a href="#overviewceb">Tanıtım</a></li>
 								<li><a href="#biography"> Vizyon</a></li>
 								<li><a href="#mediaceb"> Misyon</a></li>
 								<li><a href="#filmography">Kişisel</a></li>
 							</ul>
-							<div class="tab-content">
+							<div class="tab-content" style="padding-left: 0;">
 								<div id="overviewceb" class="tab active">
 									<div class="row">
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -206,7 +197,6 @@
 
 									</div>
 								</div>
-
 								<div id="biography" class="tab">
 									<div class="row">
 
@@ -221,9 +211,7 @@
 										<p style="font-size:1.7rem;">@Model.AboutContent3</p>
 									</div>
 								</div>
-
-								<!---->
-								<div id="filmography" class="tab">
+								<div id="filmography" class="tab" style="margin-top:100px">
 									<div class="row">
 
 										<div class="  col-md-6  col-sm-12" style=" justify-content:center; align-items:center;">
