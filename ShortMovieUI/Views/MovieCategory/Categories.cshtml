@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/MovieLayout.cshtml";
 }
 <style>
+
 	.ceb-item-style-2 {
 		width: 350px;
 		height: 350px;
@@ -11,6 +12,19 @@
 		background-position: center;
 		position: relative;
 		transition: transform 0.3s;
+	}
+
+	@@media (max-width: 1024px) {
+		.ceb-item-style-2 {
+			width: 300px;
+			height: 300px;
+		}
+	}
+	@@media (max-width: 768px) {
+		.ceb-item-style-2 {
+			width: 200px;
+			height: 200px;
+		}
 	}
 
 
@@ -54,8 +68,8 @@
 	<div class="container">
 		<div class="row ipad-width2">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				
-					<div class="row" style="display:flex; flex-wrap:wrap ">
+
+				<div class="row" style="display:flex; flex-wrap:wrap; justify-content: center;">
 						@foreach(var item in Model){
 
 						<div class="col-md-4">
