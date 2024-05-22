@@ -3,6 +3,24 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/MovieLayout.cshtml";
 }
+
+<style>
+	.ceb-item-style-2 .ceb-infor{
+		margin-left: 10px;
+	}
+
+	@@media (max-width: 767px) {
+    .ceb-item-style-2 .ceb-infor {
+        text-align: center;
+		margin-left: 0;
+       }
+
+	.ceb-item-style-2 a{
+		text-align:center;
+	}
+    }
+</style>
+
 <div class="hero common-hero" style="height:300px;">
 	<div class="container">
 		<div class="row">
@@ -29,7 +47,7 @@
 							<a asp-action="Director" asp-route-id="@item.DirectorID" asp-controller="MovieDirectors">
 								<div class="ceb-item-style-2">
 								<img style="width:100px;" src="@item.DirectorImage" alt="">
-								<div style="margin-left:10px;" class="ceb-infor">
+								<div class="ceb-infor">
 										<h2><a asp-action ="Director" asp-route-id="@item.DirectorID" asp-controller="MovieDirectors">@item.DirectorNameSurname
 							</a></h2>
 									<span>Yönetmen</span>
