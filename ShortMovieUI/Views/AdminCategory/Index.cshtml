@@ -1,0 +1,70 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Striped Table</h4>
+            <p class="card-description">
+                Add class <code>.table-striped</code>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Kategory Resim
+                            </th>
+                            <th>
+                                Kategori İsim 
+                            </th>
+                            <th>
+                                Güncelle
+                            </th>
+                            <th>
+                                Sil
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            <tr>
+                                     <td>
+                                    @item.CategoryID
+                                    </td>
+                                <td class="py-1">
+                                    <img src="@item.CategoryImage" alt="image" style=""/>
+                                </td>
+                                <td>
+                                    @item.CategoryName
+                                </td>
+                                <td>
+                                    <a class="btn btn-outline-warning" href="/AdminCategory/UpdateCategory/@item.CategoryID"><i class="fa-solid fa-pen-to-square"></i>&nbsp Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-outline-danger" href="/AdminCategory/DeleteCategory/@item.CategoryID"><i class="fa-solid fa-trash"></i>&nbsp Sil</a>
+                                </td>
+
+                               
+                              
+                            </tr>
+                        }
+                        
+                     
+                    </tbody>
+                </table>
+
+            </div>
+            <a href="/AdminCategory/AddCategory/" class="btn btn-outline-primary btn-block">Yeni Kategori Ekle</a>
+
+        </div>
+    </div>
+</div>
+

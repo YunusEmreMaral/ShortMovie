@@ -1,0 +1,29 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Kategori Güncelleme Sayfası</h4>
+
+            <form class="forms-sample" asp-action="UpdateCategory" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="CategoryID" value="@Model.CategoryID" />
+                <div class="form-group">
+                    <label for="CategoryName">Kategori İsim</label>
+                    <input type="text" name="CategoryName" class="form-control" id="CategoryName" value="@Model.CategoryName" placeholder="Kategori İsmi">
+                </div>
+                <div class="form-group">
+                    <label for="CategoryImage">Mevcut Resim</label><br />
+                    <img src="@Model.CategoryImage" alt="Category Image" width="200" /><br />
+                    <label for="CategoryImage">Yeni Resim Yükle</label>
+                    <input type="file" name="CategoryImage" class="form-control" id="CategoryImage">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
