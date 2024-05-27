@@ -1,0 +1,29 @@
+﻿@model Director
+@{
+    ViewData["Title"] = "UpdateDirector";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yönetmen Güncelleme Sayfası</h4>
+
+            <form class="forms-sample" asp-action="UpdateDirector" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="DirectorID" value="@Model.DirectorID" />
+                <div class="form-group">
+                    <label for="DirectorNameSurname">Yönetmen Adı Soyadı</label>
+                    <input type="text" name="DirectorNameSurname" class="form-control" id="DirectorNameSurname" value="@Model.DirectorNameSurname" placeholder="Yönetmen Adı Soyadı">
+                </div>
+                <div class="form-group">
+                    <label for="DirectorImage">Mevcut Resim</label><br />
+                    <img src="@Model.DirectorImage" alt="Director Image" width="200" /><br />
+                    <label for="DirectorImage">Yeni Resim Yükle</label>
+                    <input type="file" name="DirectorImage" class="form-control" id="DirectorImage">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>

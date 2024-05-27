@@ -1,0 +1,26 @@
+﻿@model Director
+@{
+    ViewData["Title"] = "AddDirector";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yönetmen Ekleme Sayfası</h4>
+
+            <form class="forms-sample" asp-action="AddDirector" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="DirectorNameSurname">Yönetmen Adı Soyadı</label>
+                    <input type="text" name="DirectorNameSurname" class="form-control" id="DirectorNameSurname" placeholder="Yönetmen Adı Soyadı">
+                </div>
+                <div class="form-group">
+                    <label for="DirectorImage">Yönetmen Resmi</label>
+                    <input type="file" name="DirectorImage" class="form-control" id="DirectorImage">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
