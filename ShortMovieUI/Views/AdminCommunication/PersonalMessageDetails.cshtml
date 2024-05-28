@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Personal
+
+@{
+    ViewData["Title"] = "Mesaj Detayları";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesaj Detayları</h4>
+
+            <div>
+                <p><strong>Kullanıcı Adı:</strong> @Model.PersonalName</p>
+                <p><strong>Konu:</strong> @Model.Subject</p>
+                <p><strong>Mesaj:</strong> @Model.Content</p>
+                <p><strong>E-posta:</strong> @Model.Mail</p>
+            </div>
+
+            <a href="@Url.Action("PersonalYunusEmre", "AdminCommunication")" class="btn btn-primary">Yunus Emre'ye Geri Dön</a>
+            <a href="@Url.Action("PersonalEren", "AdminCommunication")" class="btn btn-primary">Eren'e Geri Dön</a>
+        </div>
+    </div>
+</div>

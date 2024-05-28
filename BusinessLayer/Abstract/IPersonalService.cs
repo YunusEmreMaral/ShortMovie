@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
 	public interface IPersonalService : IGenericService<Personal>
 	{
+		public List<Personal> TPersonalMessage(string s);
 	}
 }

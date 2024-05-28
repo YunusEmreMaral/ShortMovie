@@ -1,0 +1,72 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "AddMovie";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Film Ekleme Sayfası</h4>
+
+            <form class="forms-sample" asp-action="AddMovie" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="MovieName">Film İsmi</label>
+                    <input type="text" name="MovieName" class="form-control" id="MovieName" placeholder="Film İsmi" required>
+                </div>
+                <div class="form-group">
+                    <label for="CategoryID">Kategori</label>
+                    <select name="CategoryID" class="form-control" id="CategoryID">
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <option value="@category.Value">@category.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="DirectorID">Yönetmen</label>
+                    <select name="DirectorID" class="form-control" id="DirectorID">
+                        @foreach (var director in ViewBag.Directors)
+                        {
+                            <option value="@director.Value">@director.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="MovieLink">Film Link</label>
+                    <input type="text" name="MovieLink" class="form-control" id="MovieLink" placeholder="Film Link" required>
+                </div>
+                <div class="form-group">
+                    <label for="MovieDescription">Açıklama</label>
+                    <textarea name="MovieDescription" class="form-control" id="MovieDescription" placeholder="Açıklama" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="MovieTime">Süre</label>
+                    <input type="number" name="MovieTime" class="form-control" id="MovieTime" placeholder="Süre" required>
+                </div>
+                <div class="form-group">
+                    <label for="MovieDate">Yayın Tarihi</label>
+                    <input type="date" name="MovieDate" class="form-control" id="MovieDate" placeholder="Yayın Tarihi" required>
+                </div>
+                <div class="form-group">
+                    <label for="MovieImage">Film Resmi</label>
+                    <input type="file" name="MovieImage" class="form-control" id="MovieImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="MoviePrize">Ödül</label>
+                    <input type="checkbox" name="MoviePrize" class="form-control" id="MoviePrize" >
+                </div>
+                <div class="form-group">
+                    <label for="MovieAdvice">Tavsiye</label>
+                    <input type="checkbox" name="MovieAdvice" class="form-control" id="MovieAdvice" >
+                </div>
+                <div class="form-group">
+                    <label for="MovieLike">Beğeni</label>
+                    <input type="number" name="MovieLike" class="form-control" id="MovieLike" placeholder="Beğeni" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>

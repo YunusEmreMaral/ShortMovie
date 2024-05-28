@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Comment
+
+@{
+    ViewData["Title"] = "Comment Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Comment Details</h4>
+            <div class="form-group">
+                <label>ID:</label> <hr />
+                <p>@Model.CommentID</p>
+            </div>
+            <div class="form-group">
+                <label>Ad Soyad:</label><hr />
+                <p>@Model.CommentNameSurname</p>
+            </div>
+            <div class="form-group">
+                <label>Email:</label><hr />
+                <p>@Model.CommentMail</p>
+            </div>
+            <div class="form-group">
+                <label>İçerik:</label><hr />
+                <p>@Model.CommentContent</p>
+            </div>
+            <div class="form-group">
+                <label>Tarih:</label><hr />
+                <p>@Model.CommentDate.ToString("dd/MM/yyyy HH:mm")</p>
+            </div>
+            <a href="@Url.Action("Index")" class="btn btn-primary">Geri Dön</a>
+        </div>
+    </div>
+</div>

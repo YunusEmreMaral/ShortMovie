@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
 	public interface IPersonalDal : IGenericDal<Personal>
 	{
+		public List<Personal> PersonalMessage(string s);
 	}
 }

@@ -460,19 +460,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                            <i class="typcn typcn-user-add-outline menu-icon"></i>
-                            <span class="menu-title">User Pages</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="auth">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
                             <i class="typcn typcn-globe-outline menu-icon"></i>
@@ -504,6 +492,39 @@
                             <span class="menu-title">Yönetmenler</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminMovie/Index">
+                            <i class="typcn typcn-user menu-icon"></i>
+                            <span class="menu-title">Filmler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminComment/Index">
+                            <i class="typcn typcn-user menu-icon"></i>
+                            <span class="menu-title">Yorumlar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#messages" aria-expanded="false" aria-controls="messages">
+                            <i class="typcn typcn-messages menu-icon"></i>
+                            <span class="menu-title">Mesajlar</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="messages">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("ContactList", "AdminCommunication")"> Genel </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("PersonalYunusEmre", "AdminCommunication")"> Yunus Emre </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("PersonalEren", "AdminCommunication")"> Eren </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
             </nav>
             <!-- partial -->

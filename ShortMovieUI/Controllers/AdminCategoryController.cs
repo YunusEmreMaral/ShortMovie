@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using X.PagedList;
 
 namespace ShortMovieUI.Controllers
 {
@@ -13,11 +14,24 @@ namespace ShortMovieUI.Controllers
             _categoryService = categoryService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString, int page = 1)
         {
-            var movies = _categoryService.TGetList();
-            return View(movies);
+            int pageSize = 10;
+            var categories = _categoryService.TGetList();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.ToLower();
+                categories = categories.Where(c => c.CategoryName.ToLower().Contains(searchString)).ToList();
+            }
+
+            var pagedCategories = categories.ToPagedList(page, pageSize);
+
+            ViewBag.SearchString = searchString;
+            return View(pagedCategories);
         }
+
+
 
 
         [HttpGet]

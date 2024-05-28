@@ -1,0 +1,52 @@
+﻿@model List<EntityLayer.Concrete.Personal>
+
+@{
+    ViewData["Title"] = "Yunus Emre'ye Mesajlar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yunus Emre'ye Mesajlar</h4>
+
+            <div class="table-responsive table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>İsim</th>
+                            <th>Konu</th>
+                            <th>Detaylar</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var message in Model)
+                        {
+                            <tr>
+                                <td>@message.PersonalID</td>
+                                <td>@message.PersonalName</td>
+                                <td>@message.Subject</td>
+                                <td>
+                                    <a class="btn btn-outline-info" href="@Url.Action("PersonalMessageDetails", "AdminCommunication", new { id = message.PersonalID })">
+                                        <i class="fa-solid fa-eye"></i>&nbsp Detaylar
+                                    </a>
+                                </td>
+                                <td>
+                                    <form asp-action="DeletePersonal" method="post">
+                                        <input type="hidden" name="id" value="@message.PersonalID" />
+                                        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Bu mesajı silmek istediğinizden emin misiniz?');">
+                                            <i class="fa-solid fa-trash"></i>&nbsp Sil
+                                        </button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

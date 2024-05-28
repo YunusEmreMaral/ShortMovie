@@ -38,7 +38,12 @@ namespace BusinessLayer.Concrete
 			return _personalDal.GetList();
 		}
 
-		public void TUpdate(Personal t)
+        public List<Personal> TPersonalMessage(string s)
+        {
+			return _personalDal.PersonalMessage(s);
+        }
+
+        public void TUpdate(Personal t)
 		{
 			_personalDal.Update(t);
 		}

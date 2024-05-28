@@ -1,4 +1,5 @@
-﻿@model List<Director>
+﻿@model X.PagedList.IPagedList<Director>
+@using X.PagedList.Mvc.Core
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -8,47 +9,44 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Yönetmen Listesi</h4>
-         
+
+            <!-- Arama Kutusu -->
+            <form asp-action="Index" method="get">
+                <div class="form-group">
+                    <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Yönetmen ara..." />
+                    <button type="submit" class="btn btn-primary mt-2">Ara</button>
+                </div>
+            </form>
 
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>
-                                #
-                            </th>
-                            <th>
-                                Yönetmen Resim
-                            </th>
-                            <th>
-                                Yönetmen Adı Soyadı
-                            </th>
-                            <th>
-                                Güncelle
-                            </th>
-                            <th>
-                                Sil
-                            </th>
+                            <th>#</th>
+                            <th>Yönetmen Resim</th>
+                            <th>Yönetmen Adı Soyadı</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>
-                                    @item.DirectorID
-                                </td>
+                                <td>@item.DirectorID</td>
                                 <td class="py-1">
                                     <img src="@item.DirectorImage" alt="image" style="width: 50px; height: 50px;" />
                                 </td>
+                                <td>@item.DirectorNameSurname</td>
                                 <td>
-                                    @item.DirectorNameSurname
+                                    <a class="btn btn-outline-warning" href="/AdminDirector/UpdateDirector/@item.DirectorID">
+                                        <i class="fa-solid fa-pen-to-square"></i>&nbsp Güncelle
+                                    </a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-outline-warning" href="/AdminDirector/UpdateDirector/@item.DirectorID"><i class="fa-solid fa-pen-to-square"></i>&nbsp Güncelle</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-outline-danger" href="/AdminDirector/DeleteDirector/@item.DirectorID"><i class="fa-solid fa-trash"></i>&nbsp Sil</a>
+                                    <a class="btn btn-outline-danger" href="/AdminDirector/DeleteDirector/@item.DirectorID">
+                                        <i class="fa-solid fa-trash"></i>&nbsp Sil
+                                    </a>
                                 </td>
                             </tr>
                         }
@@ -56,6 +54,11 @@
                 </table>
             </div>
             <a href="/AdminDirector/AddDirector/" class="btn btn-outline-primary btn-block">Yeni Yönetmen Ekle</a>
+
+            <!-- Paginasyon -->
+            <div class="mt-3">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.SearchString }), new PagedListRenderOptions { UlElementClasses = new[] { "pagination" }, LiElementClasses = new[] { "page-item" }, PageClasses = new[] { "page-link" } })
+            </div>
         </div>
     </div>
 </div>

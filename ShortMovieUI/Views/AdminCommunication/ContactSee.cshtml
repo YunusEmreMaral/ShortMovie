@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "İletişim Detayları";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body table">
+            <h4 class="card-title">İletişim Detayları</h4>
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                <p>@Model.ContactUserName</p>
+            </div>
+            <hr> <!-- Yatay çizgi -->
+            <div class="form-group">
+                <label>Email</label>
+                <p>@Model.ContactMail</p>
+            </div>
+            <hr> <!-- Yatay çizgi -->
+            <div class="form-group">
+                <label>Konu</label>
+                <p>@Model.ContactSubject</p>
+            </div>
+            <hr> <!-- Yatay çizgi -->
+            <div class="form-group">
+                <label>Mesaj</label>
+                <p>@Model.ContactMessage</p>
+            </div>
+            <hr> <!-- Yatay çizgi -->
+            <div class="form-group">
+                <label>Tarih</label>
+                <p>@Model.ContactDate.ToString("dd/MM/yyyy HH:mm")</p>
+            </div>
+            <hr> <!-- Yatay çizgi -->
+            <a href="@Url.Action("ContactList", "AdminCommunication")" class="btn btn-primary">Geri Dön</a>
+        </div>
+    </div>
+</div>

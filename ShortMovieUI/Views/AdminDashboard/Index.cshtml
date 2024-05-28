@@ -45,33 +45,28 @@
                 <div class="col-md-6 stretch-card grid-margin grid-margin-md-0">
                     <div class="card">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <p class="text-muted">Sales Analytics</p>
+                            <p class="text-muted">Yönetmen Sayısı</p>
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h3 class="mb-">27632</h3>
-                                <h3 class="mb-">78%</h3>
+                                <h3 class="mb-">@ViewBag.directorcount</h3>
+                                <i class="fa-solid fa-user fa-beat"></i>
                             </div>
                             <canvas id="sales-chart-b" class="mt-auto" height="38"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 stretch-card">
+                <div class="col-md-6 stretch-card grid-margin grid-margin-md-0">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="row h-100">
-                                <div class="col-6 d-flex flex-column justify-content-between">
-                                    <p class="text-muted">CPU</p>
-                                    <h4>55%</h4>
-                                    <canvas id="cpu-chart" class="mt-auto"></canvas>
-                                </div>
-                                <div class="col-6 d-flex flex-column justify-content-between">
-                                    <p class="text-muted">Memory</p>
-                                    <h4>123,65</h4>
-                                    <canvas id="memory-chart" class="mt-auto"></canvas>
-                                </div>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <p class="text-muted">Yorum Sayısı</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="mb-">@ViewBag.comment</h3>
+                                <i class="fa-solid fa-comment fa-beat justify-content-end"></i>
                             </div>
+                            <canvas id="cpu-chart" class="mt-auto"></canvas>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
         <div class="col-xl-6 grid-margin stretch-card flex-column">

@@ -1,0 +1,92 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Update Movie";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Film Güncelleme Sayfası</h4>
+
+            <form class="forms-sample" asp-action="UpdateMovie" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="MovieID" value="@Model.MovieID" />
+
+                <div class="form-group">
+                    <label for="MovieName">Film İsmi</label>
+                    <input type="text" name="MovieName" class="form-control" id="MovieName" placeholder="Film İsmi" value="@Model.MovieName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="CategoryID">Kategori</label>
+                    <select name="CategoryID" class="form-control" id="CategoryID">
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <option value="@category.Value" selected="@(category.Value == Model.CategoryID.ToString())">@category.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="DirectorID">Yönetmen</label>
+                    <select name="DirectorID" class="form-control" id="DirectorID">
+                        @foreach (var director in ViewBag.Directors)
+                        {
+                            <option value="@director.Value" selected="@(director.Value == Model.DirectorID.ToString())">@director.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="MovieLink">Film Link</label>
+                    <input type="text" name="MovieLink" class="form-control" id="MovieLink" placeholder="Film Link" value="@Model.MovieLink" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="MovieDescription">Açıklama</label>
+                    <textarea name="MovieDescription" class="form-control" id="MovieDescription" placeholder="Açıklama" required>@Model.MovieDescription</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="MovieTime">Süre</label>
+                    <input type="number" name="MovieTime" class="form-control" id="MovieTime" placeholder="Süre" value="@Model.MovieTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="MovieDate">Yayın Tarihi</label>
+                    <input type="date" name="MovieDate" class="form-control" id="MovieDate" placeholder="Yayın Tarihi" value="@Model.MovieDate.ToString("yyyy-MM-dd")" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="CurrentMovieImage">Mevcut Film Resmi</label>
+                    <div>
+                        <img src="@Model.MovieImage" alt="Movie Image" style="max-width: 200px; height: auto;" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="MovieImage">Yeni Film Resmi Yükle</label>
+                    <input type="file" name="MovieImage" class="form-control" id="MovieImage">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="MoviePrize" class="form-check-input" id="MoviePrize" value="true" @(Model.MoviePrize ? "checked" : "")>
+                    <label class="form-check-label" for="MoviePrize">Ödül</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="MovieAdvice" class="form-check-input" id="MovieAdvice" value="true" @(Model.MovieAdvice ? "checked" : "")>
+                    <label class="form-check-label" for="MovieAdvice">Tavsiye</label>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="MovieLike">Beğeni</label>
+                    <input type="number" name="MovieLike" class="form-control" id="MovieLike" placeholder="Beğeni" value="@Model.MovieLike" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
