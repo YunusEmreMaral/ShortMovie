@@ -35,16 +35,18 @@
                             if (index < Model.Count)
                             {
                                     <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div class="blog-item-style-2">
-                                        <a href="blogdetail.html" style="display: block; overflow: hidden; width: 300px; height: 400px;">
+                                    <a href="/MovieDetail/Movie/@Model[index].MovieID">
+                                        <div class="blog-item-style-2">
+                                            <a href ="/MovieDetail/Movie/@Model[index].MovieID" style="display: block; overflow: hidden; width: 300px; height: 400px;">
                                             <img src="@Model[index].MovieImage" style="object-fit: cover; width: 300px; height: 400px;" alt="">
                                         </a>
                                         <div class="blog-it-infor">
-                                            <h3><a href="blogdetail.html">@Model[index].MovieName</a></h3>
-                                            <span class="time">@Model[index].MovieDate</span>
+                                            <h3 style="color:white;">@Model[index].MovieName</h3>
+                                            <span class="time">@Model[index].MovieDate.Year</span>
                                             <p>@Model[index].MovieDescription</p>
                                         </div>
                                     </div>
+                                    </a>
                                     </div>
                                 
                             }

@@ -10,7 +10,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
-	<link rel="profile" href="#">
+	<link rel="profile" href="#"	>
 	
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!--animate kısmı-->
@@ -177,36 +177,16 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" >
-								pages <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="landing.html">Landing</a></li>
-								<li>
-									<a asp-action="movieList" asp-controller="MovieCategory">
-										Film Listesi
-									</a>
-								</li>
-								<li><a href="404.html">404 Page</a></li>
-								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
-							</ul>
-						</li>
-						<li class="loginLink"><a href="#">LOG In</a></li>
-						<li class="btn signupLink"><a href="#">sign up</a></li>
+						
+						<li class="btn"><a href="/AdminDashboard/Index">Admin</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
 			</nav>
 
 			<!-- top search form -->
-			<div class="top-search">
-				<select>
-					<option value="united">TV show</option>
-					<option value="saab">Others</option>
-				</select>
-				<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-			</div>
+
+			
 		</div>
 	</header>
 	<!-- END | Header -->
@@ -216,64 +196,81 @@
 
 	<!--end of latest new v1 section-->
 	<!-- footer section-->
+	<style>
+		footer .flex-parent-ft {
+			width: 100%;
+			justify-content: flex-start;
+			padding: 20px 0 20px 0;
+		}
+
+		.ht-footer {
+			position: relative;
+		}
+
+		.footer-cont {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.footer-main {
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+			width: 95%;
+			padding-bottom: 20px;
+		}
+
+		.footer-ul {
+			display: flex;
+			margin-bottom: 10px;
+		}
+
+			.footer-ul li {
+				margin-right: 20px;
+			}
+
+		footer .flex-parent-ft .flex-child-ft h4 {
+			margin-bottom: 10px;
+		}
+	</style>
+
+	<!--end of latest new v1 section-->
+	<!-- footer section-->
 	<footer class="ht-footer">
 		<div class="container">
 			<div class="flex-parent-ft">
-				<div class="flex-child-ft item1">
-					<a href="index-2.html"><img class="logo" src="~/Film-Review-Movie-Database/images/logo1.png" alt=""></a>
-					<p>
-						5th Avenue st, manhattan<br>
-						New York, NY 10001
-					</p>
-					<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
+				<div class="footer-cont">
+					<div class="footer-main">
+
+						<div class="flex-child-ft item2" style="border-bottom: 1px solid rgb(142, 132, 132); width: 95%;">
+							<h4>Resources</h4>
+							<ul class="footer-ul">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Contact Us</a></li>
+							</ul>
+						</div>
+						<div class="flex-child-ft item3" style="width: 95%; margin-top: 20px;">
+							<h4>Legal</h4>
+							<ul class="footer-ul">
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Security</a></li>
+							</ul>
+						</div>
+
+
+					</div>
+
+					<!-- logooo -->
+
+
 				</div>
-				<div class="flex-child-ft item2">
-					<h4>Resources</h4>
-					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Blockbuster</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">Forums</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Help Center</a></li>
-					</ul>
-				</div>
-				<div class="flex-child-ft item3">
-					<h4>Legal</h4>
-					<ul>
-						<li><a href="#">Terms of Use</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Security</a></li>
-					</ul>
-				</div>
-				<div class="flex-child-ft item4">
-					<h4>Account</h4>
-					<ul>
-						<li><a href="#">My Account</a></li>
-						<li><a href="#">Watchlist</a></li>
-						<li><a href="#">Collections</a></li>
-						<li><a href="#">User Guide</a></li>
-					</ul>
-				</div>
-				<div class="flex-child-ft item5">
-					<h4>Newsletter</h4>
-					<p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
-					<form action="#">
-						<input type="text" placeholder="Enter your email...">
-					</form>
-					<a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
-				</div>
-			</div>
-		</div>
-		<div class="ft-copyright">
-			<div class="ft-left">
-				<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-			</div>
-			<div class="backtotop">
-				<p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>
+
 			</div>
 		</div>
 	</footer>
+	<!-- end of footer section-->
 	<!-- end of footer section-->
 
 	<script src="~/Film-Review-Movie-Database/js/jquery.js"></script>

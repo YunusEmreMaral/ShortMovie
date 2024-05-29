@@ -35,6 +35,9 @@ builder.Services.AddScoped<IContactDal, EfContactRepository>();
 builder.Services.AddScoped<IAdminService, AdminManager>();
 builder.Services.AddScoped<IAdminDal, EfAdminRepository>();
 
+builder.Services.AddScoped<INewsletterService, NewsletterManager>();
+builder.Services.AddScoped<INewsletterDal, EfNewsletterRepository>();
+
 // Add authentication services
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

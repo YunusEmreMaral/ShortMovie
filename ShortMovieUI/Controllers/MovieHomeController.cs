@@ -8,15 +8,16 @@ namespace ShortMovieUI.Controllers
     {
         private readonly IAboutService _aboutService;
         private readonly IPersonalService _personalService;
+        private readonly INewsletterService _newsletterService;
 
-		public MovieHomeController(IAboutService aboutService,IPersonalService personalService)
-		{
-			_aboutService = aboutService;
-			_personalService = personalService;
-
+        public MovieHomeController(IAboutService aboutService, IPersonalService personalService, INewsletterService newsletterService)
+        {
+            _aboutService = aboutService;
+            _personalService = personalService;
+            _newsletterService = newsletterService;
         }
 
-		public IActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
@@ -39,6 +40,25 @@ namespace ShortMovieUI.Controllers
 		}
 
 		public IActionResult ErrorPage404() => View();
-		
-	}
+
+
+        [HttpGet]
+        public IActionResult SubscribeToNewsletter()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SubscribeToNewsletter([FromBody] NewsLetter model)
+        {
+            if (ModelState.IsValid)
+            {
+                _newsletterService.TAdd(model);
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
+
+    
+}
+
 }

@@ -49,7 +49,7 @@ namespace DataAccessLayer.EntityFramework
 				{
 					"Heyecan" => _context.Movies.Where(m => m.Category.CategoryName == "Korku" || m.Category.CategoryName == "Aksiyon"),
 					"Eğlence" => _context.Movies.Where(m => m.Category.CategoryName == "Komedi"),
-					"Mutlu" => _context.Movies.Where(m => m.Category.CategoryName == "Romantik" || m.Category.CategoryName == "Komedi"),
+					"Mutlu" => _context.Movies.Where(m => m.Category.CategoryName == "Romantik" || m.Category.CategoryName == "Komedi" || m.Category.CategoryName == "Animasyon"),
 					"Üzgün" => _context.Movies.Where(m => m.Category.CategoryName == "Dram"),
 					_ => throw new ArgumentException("Geçersiz duygu durumu", nameof(mood))
 				};

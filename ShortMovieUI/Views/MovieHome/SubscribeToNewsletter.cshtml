@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.NewsLetter
+<style>
+    .btn-outline-danger {
+        color: #dc3545;
+        border-color: #dc3545;
+        background-color: transparent;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-top:7px;
+    }
+
+        .btn-outline-danger:hover {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-outline-danger i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-outline-danger:hover i {
+            transform: translateX(5px);
+        }
+</style>
+
+<div class="flex-child-ft item5">
+    <h4>Mail Bülteni</h4>
+    <p>Abone ol Filmleri Kaçırma</p>
+    <form id="newsletter-form" method="post">
+        <input type="email" name="Mail" placeholder="Enter your email..." required>
+        <button type="submit" class="btn btn-outline-danger">Abone Ol <i class="ion-ios-arrow-forward"></i></button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#newsletter-form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/MovieHome/SubscribeToNewsletter',
+                contentType: 'application/json',
+                data: JSON.stringify({ Mail: $('input[name="Mail"]').val() }),
+                success: function (response) {
+                    if (response.success) {
+                        alert('Subscription successful!');
+                    } else {
+                        alert('Subscription failed!');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while processing your request.');
+                }
+            });
+        });
+    });
+</script>
