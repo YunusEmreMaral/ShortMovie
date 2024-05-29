@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ShortMovieUI.Controllers
 {
+    [Authorize]
     public class AdminDashboardController : Controller
     {
         private readonly IMovieService _movieService;

@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using EntityLayer.Concrete;
 using X.PagedList;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ShortMovieUI.Controllers
 {
+    [Authorize]
     public class AdminCommunicationController : Controller
     {
         private readonly IContactService _contactService;

@@ -1,79 +1,80 @@
 (function($) {
   'use strict';
-  $(function() {
-    // Remove pro banner on close
-    document.querySelector('#bannerClose').addEventListener('click',function() {
-      document.querySelector('#proBanner').classList.add('d-none');
-    });
-    if ($("#transactions-chart").length) {
-      var transactionsChartCanvas = $("#transactions-chart").get(0).getContext("2d");
+    $(function () {
+        document.querySelector('#bannerClose').addEventListener('click', function () {
+            document.querySelector('#proBanner').classList.add('d-none');
+        });
 
-      var gradientFill = transactionsChartCanvas.createLinearGradient(0, 0, 0, 110);
-      gradientFill.addColorStop(0, "rgba(255, 255, 255, 1)");
-      gradientFill.addColorStop(1, "rgba(243, 153, 21, .6)");
+        if ($("#transactions-chart").length) {
+            var transactionsChartCanvas = $("#transactions-chart").get(0).getContext("2d");
 
-      var areaData = {
-        labels: ["AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL"],
-        datasets: [{
-            data: [42, 90, 70, 88, 15, 92, 40, 75, 60, 90, 75, 100],
-            backgroundColor: gradientFill,
-            borderColor: [
-              '#f39915'
-            ],
-            borderWidth: 2,
-            fill: 'origin',
-            label: "online"
-          }
-        ]
-      };
-      var areaOptions = {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          filler: {
-            propagate: false
-          }
-        },
-        scales: {
-          xAxes: [{
-            display: false,
-            ticks: {
-              display: false
-            },
-            gridLines: {
-              display: false,
-              drawBorder: false,
-              color: 'transparent',
-              zeroLineColor: '#eeeeee'
-            }
-          }],
-          yAxes: [{
-            display: false,
-            ticks: {
-              display: false,
-              autoSkip: false,
-              maxRotation: 0,
-              stepSize: 15,
-              min: 0,
-              max: 100
-            }
-          }]
-        },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          enabled: true
-        },
-        elements: {
-          line: {
-            tension: 0
-          },
-          point: {
-            radius: 0
-          }
+            var gradientFill = transactionsChartCanvas.createLinearGradient(0, 0, 0, 110);
+            gradientFill.addColorStop(0, "rgba(255, 255, 255, 1)");
+            gradientFill.addColorStop(1, "rgba(243, 153, 21, .6)");
+
+            var areaData = {
+                labels: ["AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL"],
+                datasets: [{
+                    data: [42, 90, 70, 88, 15, 92, 40, 75, 60, 90, 75, 100],
+                    backgroundColor: gradientFill,
+                    borderColor: ['#f39915'],
+                    borderWidth: 2,
+                    fill: 'origin',
+                    label: "online"
+                }]
+            };
+
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    filler: {
+                        propagate: false
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        display: false,
+                        ticks: {
+                            display: false
+                        },
+                        gridLines: {
+                            display: false,
+                            drawBorder: false,
+                            color: 'transparent',
+                            zeroLineColor: '#eeeeee'
+                        }
+                    }],
+                    yAxes: [{
+                        display: false,
+                        ticks: {
+                            display: false,
+                            autoSkip: false,
+                            maxRotation: 0,
+                            stepSize: 15,
+                            min: 0,
+                            max: 100
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                elements: {
+                    line: {
+                        tension: 0
+                    },
+                    point: {
+                        radius: 0
+                    }
+                }
+            };
         }
-      }
+    });
+
 
       var transactionsChart = new Chart(transactionsChartCanvas, {
         type: 'line',

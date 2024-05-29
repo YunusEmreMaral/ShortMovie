@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 using System.Linq;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ShortMovieUI.Controllers
 {
+    [Authorize]
     public class AdminCommentController : Controller
     {
         private readonly ICommentService _commentService;

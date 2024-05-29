@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>da
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,17 +21,26 @@
     <link rel="stylesheet" href="~/admin/template/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/admin/template/images/favicon.png" />
+    <style>
+        /* Sadece belirli menü öğelerine özgü hover efekti */
+        .custom-menu-link:not(.iletisim):not(.yunus-emre):not(.eren):hover {
+            background-color: black; /* Hover olduğunda arka plan rengi siyah olsun */
+            color: white; /* Hover olduğunda metin rengi beyaz olsun */
+        }
+    </style>
+
 </head>
 <body>
-    <div class="row" id="proBanner">
+    <div style="display:none"  class="row" id="proBanner">
         <div class="col-12">
             <span class="d-flex align-items-center purchase-popup">
-                <p>Admin Paneline Hoşgeldiniz!</p>
-                <a href="/MovieHome/Index" target="_blank" class="btn download-button purchase-button ml-auto">Siteye Git</a>
+                <p>Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
+                <a href="https://bootstrapdash.com/demo/polluxui/template/index.html?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn download-button purchase-button ml-auto">Upgrade To Pro</a>
                 <i class="typcn typcn-delete-outline" id="bannerClose"></i>
             </span>
         </div>
     </div>
+
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -48,127 +57,29 @@
                 <ul class="navbar-nav mr-lg-2">
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="~/admin/template/images/faces/face5.jpg" alt="profile" />
-                            <span class="nav-profile-name">Eugenia Mullins</span>
+                            <img src="~/images/adminpng.png" alt="profile" />
+                            <span class="nav-profile-name">Admin Paneline Hoşgeldiniz</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
-                                <i class="typcn typcn-cog-outline text-primary"></i>
-                                Settings
-                            </a>
-                            <a class="dropdown-item">
-                                <i class="typcn typcn-eject text-primary"></i>
-                                Logout
-                            </a>
-                        </div>
+                       
                     </li>
                     <li class="nav-item nav-user-status dropdown">
-                        <p class="mb-0">Last login was 23 hours ago.</p>
+                        <p class="mb-0"></p>
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-date dropdown">
+                        @{
+                            var today = DateTime.Now;
+                            var formattedDate = today.ToString("MMM dd"); // Format like "Mar 23"
+                        }
                         <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
-                            <h6 class="date mb-0">Today : Mar 23</h6>
+                            <h6 class="date mb-0">Bugün: @formattedDate</h6>
                             <i class="typcn typcn-calendar"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-                            <i class="typcn typcn-cog-outline mx-0"></i>
-                            <span class="count"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="~/admin/template/images/faces/face4.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow">
-                                    <h6 class="preview-subject ellipsis font-weight-normal">
-                                        David Grey
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        The meeting is cancelled
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="~/admin/template/images/faces/face2.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow">
-                                    <h6 class="preview-subject ellipsis font-weight-normal">
-                                        Tim Cook
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        New product launch
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="~/admin/template/images/faces/face3.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow">
-                                    <h6 class="preview-subject ellipsis font-weight-normal">
-                                        Johnson
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        Upcoming board meeting
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown mr-0">
-                        <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                            <i class="typcn typcn-bell mx-0"></i>
-                            <span class="count"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <div class="preview-icon bg-success">
-                                        <i class="typcn typcn-info mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Just now
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <div class="preview-icon bg-warning">
-                                        <i class="typcn typcn-cog-outline mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Private message
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <div class="preview-icon bg-info">
-                                        <i class="typcn typcn-user mx-0"></i>
-                                    </div>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        2 days ago
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
+
+                    
+                    
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                     <span class="typcn typcn-th-menu"></span>
@@ -192,30 +103,13 @@
                 </div>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-                <ul class="navbar-nav mr-lg-2">
+                <ul class="navbar-nav mr-lg-2 navbar-nav-left">
                     <li class="nav-item ml-0">
-                        <h4 class="mb-0">Dashboard</h4>
+                        <h4 class="mb-0">Kısa Film</h4>
                     </li>
-                    <li class="nav-item">
-                        <div class="d-flex align-items-baseline">
-                            <p class="mb-0">Home</p>
-                            <i class="typcn typcn-chevron-right"></i>
-                            <p class="mb-0">Main Dahboard</p>
-                        </div>
-                    </li>
+                   
                 </ul>
-                <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item nav-search d-none d-md-block mr-0">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="search">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="search">
-                                    <i class="typcn typcn-zoom"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                
             </div>
         </nav>
         <div class="container-fluid page-body-wrapper">
@@ -389,144 +283,118 @@
             </div>
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <nav class="sidebar sidebar-offcanvas "  id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="/AdminDashboard/Index"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
                             <i class="typcn typcn-device-desktop menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
-                            <div class="badge badge-danger">new</div>
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <i class="typcn typcn-document-text menu-icon"></i>
-                            <span class="menu-title">UI Elements</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/template/pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/template/pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/template/pages/ui-features/typography.html">Typography</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-                            <i class="typcn typcn-film menu-icon"></i>
-                            <span class="menu-title">Form elements</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-elements">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/admin/template/pages/forms/basic_elements.html">Basic Elements</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                            <i class="typcn typcn-chart-pie-outline menu-icon"></i>
-                            <span class="menu-title">Charts</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="charts">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                            <i class="typcn typcn-th-small-outline menu-icon"></i>
-                            <span class="menu-title">Tables</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="tables">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                            <i class="typcn typcn-compass menu-icon"></i>
-                            <span class="menu-title">Icons</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="icons">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-                            <i class="typcn typcn-globe-outline menu-icon"></i>
-                            <span class="menu-title">Error pages</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="error">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://bootstrapdash.com/demo/polluxui-free/docs/documentation.html">
-                            <i class="typcn typcn-mortar-board menu-icon"></i>
-                            <span class="menu-title">Documentation</span>
-                        </a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/AdminCategory/Index">
-                            <i class="typcn typcn-th-menu menu-icon"></i>
-                            <span class="menu-title">Kategoriler</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/AdminDirector/Index">
-                            <i class="typcn typcn-user menu-icon"></i>
-                            <span class="menu-title">Yönetmenler</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/AdminMovie/Index">
-                            <i class="typcn typcn-user menu-icon"></i>
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="/AdminMovie/Index"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-video menu-icon"></i>
                             <span class="menu-title">Filmler</span>
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="/AdminComment/Index">
-                            <i class="typcn typcn-user menu-icon"></i>
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="/AdminCategory/Index"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-th-large-outline menu-icon"></i>
+                            <span class="menu-title">Kategoriler</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="/AdminDirector/Index"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-user-outline menu-icon"></i>
+                            <span class="menu-title">Yönetmenler</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="/AdminComment/Index"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-messages menu-icon"></i>
                             <span class="menu-title">Yorumlar</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#messages" aria-expanded="false" aria-controls="messages">
-                            <i class="typcn typcn-messages menu-icon"></i>
-                            <span class="menu-title">Mesajlar</span>
-                            <i class="menu-arrow"></i>
+                        <a class="nav-link " style="background-color: white; color: black;"
+                           href="/AdminCommunication/ContactList"
+                           onmouseover="this.style.backgroundColor='gray'; ;"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-mail menu-icon"></i>
+                            <span class="menu-title">İletişim</span>
                         </a>
-                        <div class="collapse" id="messages">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="@Url.Action("ContactList", "AdminCommunication")"> Genel </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="@Url.Action("PersonalYunusEmre", "AdminCommunication")"> Yunus Emre </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="@Url.Action("PersonalEren", "AdminCommunication")"> Eren </a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link  style="background-color: white; color: black;"
+                           href="/AdminCommunication/PersonalYunusEmre"
+                           onmouseover="this.style.backgroundColor='gray'; ;"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-tick menu-icon"></i>
+                            <span class="menu-title">Yunus Emre</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " style="background-color: white; color: black;"
+                           href="/AdminCommunication/PersonalEren"
+                           onmouseover="this.style.backgroundColor='gray'; ;"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-tick menu-icon"></i>
+                            <span class="menu-title">Eren</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="/MovieHome/Index"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-plane menu-icon"></i>
+                            <span class="menu-title">Siteye Git</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <form id="logoutForm" action="/Admin/Logout" method="post" style="display: none;">
+                            @Html.AntiForgeryToken()
+                        </form>
+                        <a class="nav-link custom-menu-link" style="background-color: white; color: black;"
+                           href="javascript:void(0);"
+                           onclick="document.getElementById('logoutForm').submit();"
+                           onmouseover="this.style.backgroundColor='gray'; this.style.color='white';"
+                           onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                            <i class="typcn typcn-lock-closed menu-icon"></i>
+                            <span class="menu-title">Çıkış Yap</span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </nav>
+
+            
+           
             <!-- partial -->
             <div class="main-panel">
                 @RenderBody()

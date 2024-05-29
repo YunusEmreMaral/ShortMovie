@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.IO;
@@ -8,6 +9,7 @@ using X.PagedList;
 
 namespace ShortMovieUI.Controllers
 {
+    [Authorize]
     public class AdminMovieController : Controller
     {
         private readonly IMovieService _movieService;

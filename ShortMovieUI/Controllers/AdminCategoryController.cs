@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
 namespace ShortMovieUI.Controllers
 {
+    [Authorize]
     public class AdminCategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
